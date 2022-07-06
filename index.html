@@ -5,6 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulários</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .titulo-rascunho {
+            margin-left: 5.5em;
+        }
+
+        .formularios-rascunho {
+            display: flex; 
+            justify-content: 
+            space-around;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input {
+            margin-bottom: 20px;
+        }
+
+        .botao-cadastrar {
+            display: flex;
+            justify-content: center;
+        }
+        
+
+    </style>
 </head>
 
 <body>
@@ -14,49 +46,63 @@
 
     <main>
         <section>
-            <div>
-                <h2>Formulários de Rascunho</h2>
-                <h3>Formulário de Cadastro de Usuário</h3>
-                <p>Preencha os seus dados para o cadastro de seu uruário</p>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+            <div class="titulo-rascunho"><h2>Formulários de Rascunho</h2></div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+            <div class="formularios-rascunho">
+                <div>
+                    <div>
+                        <h3>Rascunho 1</h3>
+                        <p>Formulário de cadastro de usuário</p>
+                    </div>
+                    <div>
+                        <h3>Formulário de cadastro de usuário</h3>
+                        <p>Preencha seus dados para cadastro de seu usuário</p>
+                        <form>
+                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
-            </div>
+                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
 
-            <div>
-                <h3>Formulário de Autenticação de Usuário</h3>
-                <p>Informe seus dados de acesso!</p>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                        </form>
+                        <div class="botao-cadastrar"><button>Cadastrar</button></div>
+                    </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                </div>
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
-            </div>
+                <div>
+                    <div>
+                        <h3>Rascunho 2</h3>
+                        <p>Formulário de Autenticação de Usuário</p>
+                    </div>
+                    <div>
+                        <h3>Formulário de Autenticação de Usuário</h3>
+                        <p>Informe seus dados de acesso!</p>
+                        <form>
+                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
 
-            <div>
-                <h3>Formulário Lembrar Senha do Usuário</h3>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                        </form>
+                    </div>
+                </div>
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
+                <div>
+                    <div>
+                        <h3>Rascunho 3</h3>
+                        <p>Formulário Lembrar Senha do Usuário</p>
+                    </div>
+                    <div>
+                        <h3>Formulário Lembrar Senha do Usuário</h3>
+                        <form>
+                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
+
+                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+
+                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
         
