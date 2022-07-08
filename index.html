@@ -89,18 +89,19 @@
         }
 
         .sem-cadastro {
-            margin-left: 25px;
+            margin-left: 20px;
+            background-color: #FFFFF0;
+        }
+
+        .sem-cadastro:hover {
+            background-color: #CD853F;
+            cursor: pointer;
         }
 
         .label-cadastro {
             background-color: #F5DEB3;
             padding-top: 12px;
             padding-left: 25px;
-        }
-
-        .label-cadastro input:hover {
-            background-color: #CD853F;
-            cursor: pointer;
         }
 
         .botao-cadastrar, .botao-logar, .recuperar {
@@ -228,7 +229,10 @@
 
                         <label class="checkbox"><input type="checkbox">Lembrar-me</label>
 
-                        <label class="label-cadastro">Ainda não tem cadastro?<input type="button" onclick="" value="Cadastre-se" class="sem-cadastro"></label>
+                        <div class="label-cadastro">
+                            <label>Ainda não tem cadastro?</label>
+                            <input type="button" value="Cadastre-se" class="sem-cadastro">
+                        </div>
                                                 
                         <a href="">Perdeu a senha?</a>
 
