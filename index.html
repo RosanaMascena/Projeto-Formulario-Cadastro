@@ -8,21 +8,39 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;;
+        }
+
+        header {
+            background: #A0522D;
         }
 
         h1 {
+            color: #FFFFF0;
+            padding: 10px;
+            margin: 0;
             text-align: center;
         }
 
-        .titulo-rascunho {
-            margin-left: 4.5em;
+        main {
+            margin: 0px 60px;
         }
 
-        .formularios-rascunho {
+        .titulo-rascunho h2, .titulo-formularios h2 {
+            background-color: #DEB887;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .titulo-formularios {
+            padding: 0px 30px;
+        }
+
+        .formularios-rascunho, .telas-formularios {
             display: flex; 
-            justify-content: 
-            space-around;
+            justify-content: space-around;
+            margin-bottom: 50px;
         }
 
         form {
@@ -31,16 +49,85 @@
         }
 
         form input {
-            margin-bottom: 20px;
+            border: 1px solid #CD853F;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 8px;
         }
 
-        .botao-cadastrar {
+        form a {
+            margin-top: 15px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        form a:hover {
+            text-decoration: underline;
+            color: #A0522D;
+        }
+
+        .rasc-cad-formulario, .rasc-aut-formulario, .rasc-lemb-senha-form {
+            background: #FFFFF0;
+            padding: 25px;
+        }
+
+        .form-final {
+            background: #FFFFF0;
+            padding-top: 10px;
+        }
+
+        .rasc-botao-cadastrar, .rasc-botao-logar, .div-cadastrar, .div-recuperar {
             display: flex;
             justify-content: center;
+            margin-top: 10px;
+        }
+
+        .div-logar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .sem-cadastro {
+            margin-left: 25px;
+        }
+
+        .label-cadastro {
+            background-color: #F5DEB3;
+            padding-top: 12px;
+            padding-left: 25px;
+        }
+
+        .label-cadastro input:hover {
+            background-color: #CD853F;
+            cursor: pointer;
+        }
+
+        .botao-cadastrar, .botao-logar, .recuperar {
+            padding: 10px 50px;
+            background-color: #DEB887;
+            border: 1px solid #CD853F;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .form-cad-usuario, .form-aut-usuario {
+            max-width: 33%;
+            padding: 25px;
+        }
+
+        .form-lembrar-senha {
+            max-width: 30%;
+            padding: 25px;
         }
         
-
+        footer {
+            text-align: center;
+        }
     </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -49,112 +136,135 @@
     </header>
 
     <main>
-        <section>
+        <section class="form-rasc">
             <div class="titulo-rascunho"><h2>Formulários de Rascunho</h2></div>
 
             <div class="formularios-rascunho">
-                <div>
-                    <div>
+                <div class="rasc-cad-usuario">
+                    <div class="tit-rasc-cad-usuario">
                         <h3>Rascunho 1</h3>
-                        <p>Formulário de cadastro de usuário</p>
+                        <p>Formulário de Cadastro de Usuário</p>
                     </div>
-                    <div>
-                        <h3>Formulário de cadastro de usuário</h3>
+                    <div class="rasc-cad-formulario">
+                        <h3>Formulário de Cadastro de Usuário</h3>
                         <p>Preencha seus dados para cadastro de seu usuário</p>
                         <form>
-                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
+                            <input type="text" id="login" class="input-padrao" required placeholder="Informe um Login">
 
-                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                            <input type="email" id="email" class="input-padrao" required placeholder="Informe o seu e-mail">
 
-                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                            <input type="password" id="senha" class="input-padrao" required placeholder="Informe uma senha">
+
+                            <div class="rasc-botao-cadastrar"><button>Cadastrar</button></div>
                         </form>
-                        <div class="botao-cadastrar"><button>Cadastrar</button></div>
                     </div>
                 </div>
                 
-                <div>
-                    <div>
+                <div class="rasc-aut-usuario">
+                    <div class="tit-rasc-aut-usuario">
                         <h3>Rascunho 2</h3>
                         <p>Formulário de Autenticação de Usuário</p>
                     </div>
-                    <div>
+                    <div class="rasc-aut-formulario">
                         <h3>Formulário de Autenticação de Usuário</h3>
                         <p>Informe seus dados de acesso!</p>
                         <form>
-                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
+                            <input type="text" id="login" class="input-padrao" required placeholder="Informe o seu Login">
 
-                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                            <input type="password" id="senha" class="input-padrao" required placeholder="Informe a sua senha">
 
-                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                            <label class="checkbox"><input type="checkbox">Lembrar-me</label>
+                            
+                            <label>Ainda não tem cadastro?<input type="submit" value="Cadastre-se" class="rasc-sem-cadastro"></label>
+
+                            <a href="">Perdeu a senha?</a>
+
+                            <div class="rasc-botao-logar"><button>Logar</button></div>
                         </form>
                     </div>
                 </div>
 
-                <div>
-                    <div>
+                <div class="rasc-lemb-senha">
+                    <div class="tit-rasc-lembrar-senha">
                         <h3>Rascunho 3</h3>
                         <p>Formulário Lembrar Senha do Usuário</p>
                     </div>
-                    <div>
+                    <div class="rasc-lemb-senha-form">
                         <h3>Formulário Lembrar Senha do Usuário</h3>
+                        <p>Informe seu e-mail de acesso</p>
                         <form>
-                            <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="Informe um Login">
-
-                            <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
-
-                            <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                            <input type="email" id="email" class="input-padrao" required placeholder="Informe seu e-mail cadastrado">
                         </form>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section>
-            <div>
-                <h2>Telas dos Formulários</h2>
-                <h3>Formulário de Cadastro de Usuário</h3>
-                <p>Preencha os seus dados para o cadastro de seu uruário</p>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+        <section class="form-final">
+            <div class="titulo-formularios"><h2>Telas dos Formulários</h2></div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+            <div class="telas-formularios">
+                <div class="form-cad-usuario">
+                    <h3>Formulário de Cadastro de Usuário</h3>
+                    <p>Preencha os seus dados para cadastro de seu usuário</p>
+                    <form class="cadastrar">
+                        <input type="text" id="login" class="input-padrao" required placeholder="Informe um Login">
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
-            </div>
+                        <input type="email" id="email" class="input-padrao" required placeholder="Seu e-mail">
 
-            <div>
-                <h3>Formulário de Autenticação de Usuário</h3>
-                <p>Informe seus dados de acesso!</p>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+                        <input type="password" id="senha" class="input-padrao" required placeholder="Informe uma senha">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                        <div class="div-cadastrar"><button type="submit" class="botao-cadastrar" required>Cadastrar</button></div>
+                    </form>
+                </div>
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
-            </div>
+                <div class="form-aut-usuario">
+                    <h3>Formulário de Autenticação de Usuário</h3>
+                    <p>Informe seus dados de acesso!</p>
+                    <form>
+                        <input type="text" id="login" class="input-padrao" required placeholder="Informe o seu Login">
 
-            <div>
-                <h3>Formulário Lembrar Senha do Usuário</h3>
-                <form>
-                    <label for="nomesobrenome">Nome Completo</label>
-                    <input type="text" id="nomesobrenome" class="input-padrao" required>
+                        <input type="password" id="senha" class="input-padrao" required placeholder="Informe a sua senha">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+                        <label class="checkbox"><input type="checkbox">Lembrar-me</label>
 
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                </form>
+                        <label class="label-cadastro">Ainda não tem cadastro?<input type="button" onclick="" value="Cadastre-se" class="sem-cadastro"></label>
+                                                
+                        <a href="">Perdeu a senha?</a>
+
+                        <div class="div-logar"><button class="botao-logar">Logar</button></div>
+                    </form>
+                </div>
+
+                <div class="form-lembrar-senha">
+                    <h3>Formulário Lembrar Senha do Usuário</h3>
+                    <p>Informe seu e-mail de acesso que enviaremos as instruções para recuperação</p>
+                    <form>
+                        <input type="email" id="email" class="input-padrao" required placeholder="Informe seu e-mail cadastrado">
+
+                        <div class="div-recuperar"><button class="recuperar">Recuperar</button></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>Todos os direitos reservados a Rosana Mascena - RA: 21003483-5 ©</p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".botao-cadastrar").hover(function(){
+                $(this).css("background-color", "#CD853F");
+                }, function(){
+                $(this).css("background-color", "#DEB887");
+            });
+
+            $(".cadastrar").submit(function(){
+                alert("Cadastro realizado com sucesso!");
+            });
+        });  
+    </script>
 </body>
 </html>
